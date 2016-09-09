@@ -33,7 +33,24 @@
 
 // Write the function definitions which will make the following function invocations function properly.
 
-  //Function Invocations Here
+
+var Car = function(make, model, year, move) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.move = 0;
+//   this.moveCar = function () {
+//
+//       return this.move += 10;
+//
+//   };
+};
+
+Car.prototype.moveCar = function () {
+
+    this.move += 10;
+
+};
 
 var prius = new Car('Toyota', 'Prius', 2011);
 var mustang = new Car('Ford', 'Mustang', 2013);
@@ -47,14 +64,15 @@ mustang.moveCar(); //increments mustang' move property by 10. Returns the new mo
 
 //Continuation of previous problem
 
-var getYear = function(){
+Car.prototype.getYear = function(){
   return this.year;
 };
 
 //Above you're given the getYear function. Using your prius and mustang objects from above, use the proper syntax that will allow for you to call the getYear function with the prius then the mustang objects being the focal objects. *Don't add getYear as a property on both objects*.
 
 //Note(no tests)
-  //Code Here
+prius.getYear();
+mustang.getYear();
 
 
 //New Problem
